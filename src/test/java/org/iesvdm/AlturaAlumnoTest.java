@@ -113,6 +113,57 @@ public class AlturaAlumnoTest {
 
     }
 
+    @Test
+    public void testCalculaMaximo() {
+        // Creamos un arreglo de números de ejemplo
+        double[] array = {3.5, 1.2, 5.7, 2.8, 4.1};
 
+        // Llamamos a la función calculaMaximo()
+        double[] resultado = calcularMaximo(array);
 
+        // Verificamos que el resultado sea correcto
+        assertEquals(2.0, resultado[0]); // La posición del máximo debe ser 2
+        assertEquals(5.7, resultado[1]); // El máximo debe ser 5.7
+    }
+
+    @Test
+    public void testCalculaMaximoArrayVacio() {
+        // Creamos un arreglo vacío
+        double[] arrayVacio = {};
+
+        // Llamamos a la función calculaMaximo() con el arreglo vacío
+        double[] resultado = calcularMaximo(arrayVacio);
+
+        // Verificamos que el resultado para un arreglo vacío sea un arreglo vacío
+        assertArrayEquals(new double[]{0.0, 0.0}, resultado); // El resultado para un arreglo vacío debe ser {0.0, 0.0}
+    }
+
+    private double[] calcularMaximo(double[] arrayVacio) {
+        return arrayVacio;
+    }
 }
+class MediaAlturasTest {
+
+    @Test
+    public void testCalculaMedia() {
+        // Creamos un arreglo de alturas de ejemplo
+        double[] alturas = {1.75, 1.80, 1.65, 1.70, 1.72};
+
+        // Calculamos la media esperada
+        double mediaEsperada = (1.75 + 1.80 + 1.65 + 1.70 + 1.72) / 5.0;
+
+        // Llamamos a la función calculaMedia()
+        double mediaCalculada = calcularMedia(alturas);
+
+        // Verificamos que la media calculada sea igual a la media esperada
+        assertEquals(mediaEsperada, mediaCalculada, 0.01); // Usamos un delta pequeño para comparar valores de punto flotante
+    }
+
+    private double calcularMedia(double[] alturas) {
+        return 0;
+    }
+}
+
+
+
+
